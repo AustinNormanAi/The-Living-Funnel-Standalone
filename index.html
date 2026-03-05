@@ -4350,67 +4350,130 @@
 
         /* Downsell Section */
         .downsell-section {
-            max-width: 960px;
-            margin: 56px auto 0;
+            max-width: 1020px;
+            margin: 72px auto 0;
             text-align: center;
         }
         .downsell-trigger {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-tertiary);
-            margin-bottom: 24px;
+            margin-bottom: 12px;
             font-style: italic;
+            letter-spacing: 0.02em;
+        }
+        .downsell-heading {
+            font-family: var(--heading-font);
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        .downsell-subhead {
+            font-size: 15px;
+            color: var(--text-tertiary);
+            margin-bottom: 40px;
+            line-height: 1.5;
         }
         .downsell-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
+            align-items: stretch;
         }
         .downsell-card {
-            padding: 32px 24px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            position: relative;
+            padding: 40px 28px 36px;
+            background: linear-gradient(160deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
             border: 1px solid var(--border);
             border-radius: 20px;
             text-align: center;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
         }
         .downsell-card:hover {
             border-color: var(--border-light);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+        }
+        .downsell-card.featured {
+            border-color: rgba(119, 244, 220, 0.25);
+            background: linear-gradient(160deg, rgba(119,244,220,0.06) 0%, rgba(255,255,255,0.02) 100%);
+        }
+        .downsell-card.featured:hover {
+            border-color: rgba(119, 244, 220, 0.4);
+            box-shadow: 0 16px 48px rgba(119,244,220,0.08), 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .downsell-card-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+            line-height: 1;
+        }
+        .downsell-card-label {
+            display: inline-block;
+            font-family: var(--heading-font);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+            padding: 4px 12px;
+            background: rgba(119,244,220,0.08);
+            border-radius: 4px;
         }
         .downsell-card h4 {
             font-family: var(--heading-font);
-            font-size: 14px;
+            font-size: 18px;
             font-weight: 800;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
             color: var(--text-primary);
-            margin-bottom: 12px;
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
         }
         .downsell-card-price {
             font-family: var(--heading-font);
-            font-size: 28px;
+            font-size: 36px;
             font-weight: 800;
             color: var(--accent);
-            margin-bottom: 16px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        .downsell-card-divider {
+            width: 40px;
+            height: 1px;
+            background: var(--border-light);
+            margin: 0 auto 20px;
         }
         .downsell-card-hook {
             font-size: 14px;
             font-weight: 600;
             color: var(--text-primary);
             margin-bottom: 12px;
-            line-height: 1.5;
+            line-height: 1.55;
         }
         .downsell-card-desc {
             font-size: 13px;
             color: var(--text-tertiary);
-            line-height: 1.6;
-            margin-bottom: 24px;
+            line-height: 1.65;
+            margin-bottom: 28px;
+            flex-grow: 1;
         }
         .downsell-cta {
             padding: 14px 28px !important;
             font-size: 13px !important;
             width: 100%;
+            margin-top: auto;
+        }
+        .downsell-card.featured .downsell-cta {
+            background: var(--accent) !important;
+            color: #0a0a0f !important;
+            border-color: var(--accent) !important;
+            font-weight: 700 !important;
+        }
+        .downsell-card.featured .downsell-cta:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(119,244,220,0.25);
         }
 
         /* Responsive: Buy Box + Downsell */
@@ -4428,11 +4491,14 @@
                 grid-template-columns: 1fr;
                 gap: 16px;
             }
+            .downsell-heading {
+                font-size: 22px;
+            }
             .founder-note {
                 padding: 24px 20px;
             }
             .downsell-card {
-                padding: 28px 20px;
+                padding: 32px 20px 28px;
             }
             .buy-box-price-row {
                 flex-direction: column;
@@ -4463,10 +4529,10 @@
                 font-size: 14px;
             }
             .downsell-card {
-                padding: 24px 16px;
+                padding: 28px 16px 24px;
             }
             .downsell-card-price {
-                font-size: 24px;
+                font-size: 28px;
             }
             .founder-note {
                 padding: 20px 16px;
@@ -6988,24 +7054,35 @@
                 <!-- Downsell Section -->
                 <div class="downsell-section fade-up delay-3">
                     <p class="downsell-trigger">Not ready for the full build?</p>
+                    <h3 class="downsell-heading">Start Where You Are</h3>
+                    <p class="downsell-subhead">Three ways to get moving — pick the one that fits.</p>
                     <div class="downsell-cards">
                         <div class="downsell-card">
-                            <h4>THE PLAYBOOK</h4>
+                            <div class="downsell-card-icon">📘</div>
+                            <span class="downsell-card-label">DIY</span>
+                            <h4>The Playbook</h4>
                             <div class="downsell-card-price">$1,900</div>
-                            <p class="downsell-card-hook">Every system, process, and WORKFLOW we use, yours to build on your timeline.</p>
-                            <p class="downsell-card-desc">We know how powerful these systems are. This is the exact step-by-step guidebook we would have used to build it all out for you anyway. Same frameworks, same strategies, same WORKFLOWS. You just do the building yourself.</p>
+                            <div class="downsell-card-divider"></div>
+                            <p class="downsell-card-hook">Every system, process, and workflow we use — yours to build on your timeline.</p>
+                            <p class="downsell-card-desc">The exact step-by-step guidebook we'd use to build it all out for you. Same frameworks, same strategies, same workflows. You just do the building yourself.</p>
                             <a href="#playbook" class="btn-ghost downsell-cta">Get The Playbook</a>
                         </div>
-                        <div class="downsell-card">
-                            <h4>STARTER KIT</h4>
+                        <div class="downsell-card featured">
+                            <div class="downsell-card-icon">⚡</div>
+                            <span class="downsell-card-label">Most Popular</span>
+                            <h4>Starter Kit</h4>
                             <div class="downsell-card-price">$1,000</div>
-                            <p class="downsell-card-hook">1 custom advertorial + batch of 20 ads across static, video, and UGC to prove the model.</p>
+                            <div class="downsell-card-divider"></div>
+                            <p class="downsell-card-hook">1 custom advertorial + 20 static ads across angles, personas, and awareness levels.</p>
                             <p class="downsell-card-desc">See our work before you commit to the full build. We'll create one complete advertorial with 20 ads so you can see the quality firsthand. If you love it, upgrade to the full build anytime.</p>
                             <a href="#starter" class="btn-ghost downsell-cta">Start Small</a>
                         </div>
                         <div class="downsell-card">
-                            <h4>CUSTOM BUILD</h4>
+                            <div class="downsell-card-icon">🛠</div>
+                            <span class="downsell-card-label">Flexible</span>
+                            <h4>Custom Build</h4>
                             <div class="downsell-card-price">Book A Call</div>
+                            <div class="downsell-card-divider"></div>
                             <p class="downsell-card-hook">Already have parts of the system? Let's talk about what you actually need.</p>
                             <p class="downsell-card-desc">Maybe you already have ads but need the ecosystem architecture. Or you have products but need the entry points. Remove what you don't need, keep what you do. We'll scope it on a quick call.</p>
                             <a href="https://calendly.com" class="btn-ghost downsell-cta" target="_blank" rel="noopener">Book A Call</a>
