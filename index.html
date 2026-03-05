@@ -2959,7 +2959,7 @@
         @media (max-width: 1024px) {
             .hero-layout {
                 grid-template-columns: 1fr;
-                gap: 48px;
+                gap: 32px;
                 text-align: center;
             }
 
@@ -2973,8 +2973,11 @@
             .hero-proof { justify-content: center; }
 
             .hero-preview {
-                max-width: 640px;
+                max-width: 700px;
                 margin: 0 auto;
+                width: calc(100% + 48px);
+                margin-left: -24px;
+                margin-right: -24px;
             }
 
             .preview-window {
@@ -3019,9 +3022,45 @@
         }
 
         @media (max-width: 768px) {
-            .hero { padding: 130px 20px 80px; }
+            .hero {
+                padding: 90px 16px 32px;
+                min-height: auto;
+            }
 
-            .hero-ctas { flex-direction: column; align-items: center; }
+            .hero-layout { gap: 24px; }
+
+            .hero h1 { margin-bottom: 14px; }
+
+            .hero-sub {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                margin-bottom: 20px;
+                font-size: 15px;
+            }
+
+            .hero-badge { margin-bottom: 18px; }
+
+            .hero-proof { gap: 24px; margin-bottom: 0; }
+            .hero-proof-item { text-align: center; }
+            .hero-proof-value { font-size: 22px; }
+            .hero-proof-label { font-size: 10px; }
+
+            .hero-preview {
+                width: calc(100% + 32px);
+                margin-left: -16px;
+                margin-right: -16px;
+                max-width: none;
+            }
+
+            .preview-window {
+                border-radius: 10px;
+                transform: none;
+                animation: none;
+            }
+
+            .hero-ctas { flex-direction: column; align-items: center; margin-bottom: 24px; }
 
             .btn-primary, .btn-ghost { width: 100%; max-width: 340px; text-align: center; }
             .btn-large { padding: 20px 40px; font-size: 16px; }
@@ -3038,7 +3077,6 @@
             .gravity-node-label { font-size: 11px; }
 
             .hero-proof-divider { display: none; }
-            .hero-proof { gap: 20px; }
 
             .nav { padding: 10px 16px; width: calc(100% - 24px); }
             .nav-cta { padding: 8px 18px; font-size: 12px; }
@@ -3105,8 +3143,22 @@
         }
 
         @media (max-width: 480px) {
+            .hero { padding: 80px 14px 24px; }
+            .hero-layout { gap: 20px; }
+            .hero h1 { font-size: 32px; }
+            .hero-sub {
+                -webkit-line-clamp: 2;
+                font-size: 14px;
+                margin-bottom: 16px;
+            }
+            .hero-badge { font-size: 10px; padding: 5px 12px; margin-bottom: 14px; }
+            .hero-ctas { margin-bottom: 16px; }
+            .btn-primary, .btn-ghost { padding: 14px 28px; font-size: 14px; }
             .results-grid { grid-template-columns: 1fr; }
-            .hero-proof { flex-direction: column; gap: 12px; text-align: center; }
+            .hero-proof { flex-direction: row; gap: 0; text-align: center; justify-content: space-around; width: 100%; }
+            .hero-proof-item { flex: 1; }
+            .hero-proof-value { font-size: 20px; }
+            .hero-proof-label { font-size: 9px; letter-spacing: 0.06em; }
             .gravity-layer { gap: 6px; }
             .gravity-node { padding: 8px 10px; }
             .gravity-node-label { font-size: 10px; }
@@ -5026,6 +5078,11 @@
                 <p class="hero-sub fade-up delay-2">
                     You have the product. You have paying customers. But the acquisition system around it? The ads, the entry points, the funnels, the digital products, the workflows to tie it all together? That's where things get overwhelming. We build the complete system for you: 100+ Meta ads, 8+ conversion-optimized pages, 5 digital products, and the exact workflows to run and scale everything yourself. We build the 80%. You handle the 20%.
                 </p>
+
+                <div class="hero-ctas fade-up delay-2">
+                    <a href="#apply" class="btn-primary">See How It Works &rarr;</a>
+                    <a href="#case-study" class="btn-ghost">View Case Study</a>
+                </div>
 
                 <div class="hero-proof fade-up delay-3">
                     <div class="hero-proof-item">
